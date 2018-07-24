@@ -2,16 +2,9 @@
  (disregarding whitespace, punctuation and capitalization). Examples include madam, level, nurses run"""
 
 entry = []
-while True:
-    #giving exit instructions
-    print("To exit type 'quit'")
-    #Get user input
-    phrase = input("Enter name to be tested: ")
-    #add the input into the entry list
-    entry.append(phrase)
-    def Palindromes(phrase):
+def palindromes(x):
         #remove whitespace 
-        word = phrase.replace(" ", "")
+        word = x.replace(" ", "")
         #reverse the words 
         rewind = reversed(word)
             
@@ -21,7 +14,15 @@ while True:
         else:
             return "It is not a Palindrome!!"
 
-    Palindromes(phrase)
+while True:
+    #giving exit instructions
+    print("To exit type 'quit'")
+    #Get user input
+    phrase = input("Enter name to be tested: ")
+    #add the input into the entry list
+    entry.append(phrase)
+    print(palindromes(phrase))
+
     if phrase == "quit":
         break
     else:

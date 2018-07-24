@@ -1,5 +1,5 @@
 import unittest
-from Palindromes import Palindromes
+from Palindromes import palindromes 
 
 class TestPalindromes(unittest.TestCase):
     """
@@ -10,18 +10,30 @@ class TestPalindromes(unittest.TestCase):
             code that is executed before each test
         """
         self.data1 = "madam"
-        self.data2 = "level"
-        self.data3 = "nurses run"
+        self.data2 = "nurses run"
 
         self.error1 = "eyansky"
-        self.error2 = "ian eyansky"
-        self.error3 = "Yule msee!!"
 
     def test_Palindrome(self):
         """
             Test for good palindrome
         """
-        
+       
+        self.assertEqual(palindromes(self.data1), "It is a Palindrome!!")
+
+    def test_whitespace_Palindrome(self):
+        """
+            Test for palindrome with white spaces
+        """
+       
+        self.assertEqual(palindromes(self.data2), "It is a Palindrome!!")
+    
+    def test_bad_Palindrome(self):
+        """
+            Test for bad palindrome 
+        """
+       
+        self.assertEqual(palindromes(self.error1), "It is not a Palindrome!!")
 
 
 if __name__ == '__main__':
